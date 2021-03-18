@@ -1,0 +1,212 @@
+﻿<Window x:Class="BRM_calc.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BRM_calc"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Height="450" 
+        Width="800" 
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.ColumnSpan="2"
+                Background="BurlyWood"/>
+
+        <TextBlock Grid.ColumnSpan="2"
+                   Text="BMR калькулятор"
+                   Foreground="White"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="40" 
+                   FontWeight="Bold" 
+                   FontFamily="VAG Round Cyrillic"
+                   />
+
+        <Button x:Name="btnMale"
+                Content="Мужчина"
+                Grid.Row="1"
+                Margin="10 30 50 10"
+                Height="30"
+                Width="100"
+                Background="LightBlue"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Right"
+                Click="btnMale_Click"/>
+
+        <Button x:Name="btnFemale"
+                Content="Женщина"
+                Grid.Row="1"
+                Margin="50 30 10 10"
+                Height="30"
+                Width="100"
+                Background="LightPink"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Left"
+                Click="btnFemale_Click"/>
+
+        <TextBlock Grid.Row="1"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Center"
+                   Text="Выберите ваш пол"
+                   FontSize="15"/>
+
+        <TextBox x:Name="tbWeight"
+                 Grid.Row="2"
+                 Height="25"
+                 Width="200"
+                 VerticalAlignment="Bottom"
+                 Margin="0 0 0 10"
+                 Text="Введите вес"
+                 Foreground="Gray"
+                 VerticalContentAlignment="Center"
+                 GotFocus="tbWeight_GotFocus"/>
+
+        <TextBlock Grid.Row="2"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Center"
+                   Text="Введите Ваш вес (кг)"
+                   FontSize="15"
+                   Margin="0 10 0 0"
+                   />
+
+        <TextBox x:Name="tbHeight"
+                 Grid.Row="3"
+                 Height="25"
+                 Width="200"
+                 VerticalAlignment="Bottom"
+                 Margin="0 0 0 10"
+                 VerticalContentAlignment="Center"
+                 Text="Введите рост"
+                 Foreground="Gray"
+                 GotFocus="tbHeight_GotFocus"/>
+
+        <TextBlock Grid.Row="3"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Center"
+                   Text="Введите Ваш рост (см)"
+                   FontSize="15"
+                   Margin="0 10 0 0"/>
+
+        <TextBox x:Name="tbAge"
+                 Grid.Row="4"
+                 Height="25"
+                 Width="200"
+                 VerticalAlignment="Bottom"
+                 Margin="0 0 0 10"
+                 Text="Введите возраст"
+                 Foreground="Gray"
+                 VerticalContentAlignment="Center"
+                 GotFocus="tbAge_GotFocus"/>
+
+        <TextBlock Grid.Row="4"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Center"
+                   Text="Введите Ваш возраст (лет)"
+                   FontSize="15"
+                   Margin="0 10 0 0"/>
+
+        <Button x:Name="btnCalc"
+                Grid.Row="5"
+                Height="30"
+                Width="150"
+                Content="Рассчитать"
+                Background="BurlyWood"
+                Foreground="White"
+                FontSize="20" 
+                FontWeight="Bold" 
+                FontFamily="VAG Round Cyrillic"
+                Click="btnCalc_Click"/>
+
+        <TextBlock Grid.Row="1"
+                   Grid.Column="1"
+                   Text="Результат"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top"
+                   FontSize="20"
+                   />
+
+        <TextBlock Grid.Row="1"
+                   Grid.Column="1"
+                   x:Name="txtBMRRes"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Bottom"
+                   Margin="0 0 0 10"
+                   FontSize="20"/>
+
+        <TextBlock Grid.Row="2"
+                   Grid.Column="1"
+                   Text="Ежедневно тратится калорий:"
+                   HorizontalAlignment="Left"
+                   Margin="20 0 0 0"
+                   VerticalAlignment="Top"
+                   FontSize="20"
+                   />
+
+        <TextBlock Grid.Row="2"
+                   Grid.Column="1"
+                   x:Name="txtSit"
+                   Margin="20 0 0 0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Bottom"
+                   FontSize="20"
+                   Foreground="Indigo"/>
+
+        <TextBlock Grid.Row="3"
+                   Grid.Column="1"
+                   x:Name="txtLitAct"
+                   Margin="20 0 0 0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   FontSize="20"
+                   Foreground="Green"/>
+
+        <TextBlock Grid.Row="3"
+                   Grid.Column="1"
+                   x:Name="txtMedAct"
+                   Margin="20 0 0 0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Bottom"
+                   FontSize="20"
+                   Foreground="DarkGreen"/>
+
+        <TextBlock Grid.Row="4"
+                   Grid.Column="1"
+                   x:Name="txtDifAct"
+                   Margin="20 0 0 0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   FontSize="20"
+                   Foreground="DarkOrange"/>
+
+        <TextBlock Grid.Row="4"
+                   Grid.Column="1"
+                   x:Name="txtMaxAct"
+                   Margin="20 0 0 0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Bottom"
+                   FontSize="20"
+                   Foreground="Red"/>
+
+
+
+
+
+
+
+    </Grid>
+</Window>
